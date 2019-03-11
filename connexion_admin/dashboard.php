@@ -15,6 +15,7 @@
         <p>
         Cette page est à paramétrer pour le tableau de bord. 
         </p>
+        
         <?php
     }
     else 
