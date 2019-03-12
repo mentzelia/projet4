@@ -13,7 +13,10 @@
         <h1>Bienvenue Jean!</h1>  
         
         <p>
-        Cette page est à paramétrer pour le tableau de bord. 
+        Que souhaitez-vous faire?<br/ >
+        <a href="create_post.php">Ecrire un nouveau billet</a><br/ >
+        <a href="delete_post.php">Supprimer un billet</a><br/ >
+        <a href="modify_post.php">Modifier un billet</a><br/ >
         </p>
         
         <?php
