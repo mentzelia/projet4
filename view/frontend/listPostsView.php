@@ -26,6 +26,10 @@ while ($data = $posts->fetch())
 }
 $posts->closeCursor();
 ?>
+<p>
+    <a href="index.php?action=register">S'inscrire</a>
+</p>
+
 <?php $content = ob_get_clean(); ?>
 
 <?php require('view/frontend/template.php'); ?>

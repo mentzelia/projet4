@@ -27,6 +27,9 @@ try {
                 throw new Exception('Aucun identifiant de billet envoyé');
             }
         }
+        elseif($_GET['action'] == 'register') {
+            register();
+        }
     }
     else {
         listPosts();
