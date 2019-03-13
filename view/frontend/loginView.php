@@ -4,12 +4,12 @@
 
 <h1>Connexion à l'administration</h1>
         
-        <form method="post" action="index.php?action=dashboard">
+        <form method="post" action="index.php?action=admin_connexion">
             <label for="login">Nom d'utilisateur:</label>
             <input type="text" name="login" value="" id="login" /><br />
 
-            <label for="password1">Mot de passe:</label>
-            <input type="password" name="password1" value="" id="password1" /><br />
+            <label for="password">Mot de passe:</label>
+            <input type="password" name="password" value="" id="password" /><br />
 
             <input type="submit" value="Se connecter" />
         </form>

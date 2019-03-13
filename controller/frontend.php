@@ -46,22 +46,24 @@ function addUser($login, $password1, $password2, $email)
 {
     $userManager = new OpenClassRooms\Duboscq\Virginie\UserManager();
     
-    if (isset($login) AND isset($password2) AND isset($email) AND ($password1 == $password2)) 
-        {
-            $login = htmlspecialchars($login);
-            $password1 = htmlspecialchars($password1);
-            $email = htmlspecialchars($email);
-            $result = $userManager->addUser($login, $password1, $password2, $email);
-            
-        if($result != 'erreur'){
-                header('Location:index.php?action=created');
-            }else{
-                header('Location:index.php?result=error');
-            }
-	   }
+    $login = htmlspecialchars($login);
+    $password1 = htmlspecialchars($password1);
+    $email = htmlspecialchars($email);
+    $result = $userManager->addUser($login, $password1, $password2, $email);
+    
+    require('view/frontend/loginView.php');
+               
 }
 
 function GetLogInForm()
 {
     require('view/frontend/loginView.php');
 }
+
+function verifyUserData($login, $password)
+{
+    $userManager = new OpenClassRooms\Duboscq\Virginie\UserManager();
+    
+    $checkData = $userManager->verifyUserData($login, $password);
+    
+} 

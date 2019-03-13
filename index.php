@@ -59,6 +59,10 @@ try {
             getLogInForm();
         }
         
+        elseif($_GET['action'] == 'admin_connexion'){
+            verifyUserData($_POST['login'], $_POST['password']);
+        }
+        
         
         
         
