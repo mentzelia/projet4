@@ -64,6 +64,16 @@ function verifyUserData($login, $password)
 {
     $userManager = new OpenClassRooms\Duboscq\Virginie\UserManager();
     
-    $checkData = $userManager->verifyUserData($login, $password);
+    $data = $userManager->verifyUserData($login, $password);
+    
+    if($login == $data['user'] AND $password == $data['password']){
+        if($data['role'] == 1){
+            require('view/backend/dashboardView.php');
+        }else{
+            echo 'Vous n\'êtes pas administrateur.';
+        }
+    }else{
+        echo 'Mauvais identifiant ou mot de passe'; 
+    }
     
 } 

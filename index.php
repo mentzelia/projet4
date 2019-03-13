@@ -60,7 +60,14 @@ try {
         }
         
         elseif($_GET['action'] == 'admin_connexion'){
-            verifyUserData($_POST['login'], $_POST['password']);
+            if(isset($_POST['login']) AND isset($_POST['password'])){
+                
+                if(!empty($_POST['login']) AND !empty($_POST['password'])){
+                    
+                    verifyUserData($_POST['login'], $_POST['password']);
+                    
+                }
+            }
         }
         
         

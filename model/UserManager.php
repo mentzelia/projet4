@@ -39,14 +39,12 @@ class UserManager extends Manager
     {
         $bdd = $this->dbConnect();
         $req = $bdd->prepare('SELECT user, password, role FROM member_area WHERE user=?, password=?' );
-            $req->execute(array($login, $password));
-            
-            if ($data = $req->fetch())
-            {
-                echo ('OK');
-                return 'OK';
-            }
-            $req->closeCursor();
+        $req->execute(array($login, $password));
+        $data = $req->fetch();
+        
+        return $data;
+        
+        $req->closeCursor();
     }
 
 
