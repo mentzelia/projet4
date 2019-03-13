@@ -51,11 +51,17 @@ function addUser($login, $password1, $password2, $email)
             $login = htmlspecialchars($login);
             $password1 = htmlspecialchars($password1);
             $email = htmlspecialchars($email);
-            $result = $userManager->addUser($login, $password1, $email);
+            $result = $userManager->addUser($login, $password1, $password2, $email);
+            
         if($result != 'erreur'){
-            header('Location:index.php?result=created');
-        }else{
-            header('Location:index.php?result=error');
-        }
+                header('Location:index.php?action=created');
+            }else{
+                header('Location:index.php?result=error');
+            }
 	   }
+}
+
+function GetLogInForm()
+{
+    require('view/frontend/loginView.php');
 }

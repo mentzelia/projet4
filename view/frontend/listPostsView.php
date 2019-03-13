@@ -27,7 +27,8 @@ while ($data = $posts->fetch())
 $posts->closeCursor();
 ?>
 <p>
-    <a href="index.php?action=register">S'inscrire</a>
+    <a href="index.php?action=register">S'inscrire</a><br />
+    <a href="index.php?action=log_in">Se connecter</a>
 </p>
 
 <?php $content = ob_get_clean(); ?>

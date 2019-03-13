@@ -43,6 +43,10 @@ try {
             }
         }
         
+        elseif($_GET['action'] == 'log_in'){
+            getLogInForm();
+        }
+        
         
         
         

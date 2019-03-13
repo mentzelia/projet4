@@ -4,7 +4,7 @@
 
 <h1>Inscription</h1>
         
-        <form method="post" action="index.php?action=user_registration">
+        <form method="post" action="index.php?action= user_registration">
             <label for="login">Nom d'utilisateur:</label>
             <input type="text" name="login" value="" id="login" /><br />
 
