@@ -8,7 +8,7 @@ try {
         }
         elseif ($_GET['action'] == 'post') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
-                post();
+                post($_GET['id']);
             }
             else {
                 throw new Exception('Aucun identifiant de billet envoyé');
@@ -28,8 +28,24 @@ try {
             }
         }
         elseif($_GET['action'] == 'register') {
-            register();
+            getRegisterForm();
         }
+        
+        elseif($_GET['action'] == 'user_registration') {
+            if(isset($_POST['login']) && isset($_POST['password1']) && isset($_POST['email'])){
+                if(!empty($_POST['login']) && !empty($_POST['password1']) && !empty($_POST['email'])) {
+                    
+                    if($_POST['password1'] == $_POST['password2']) {
+                        
+                        addUser($_POST['login'], $_POST['password1'], $_POST['password2'], $_POST['email']);
+                    }  
+                }
+            }
+        }
+        
+        
+        
+        
     }
     else {
         listPosts();
