@@ -5,7 +5,7 @@
 <h1>Bienvenue sur votre tableau de bord!</h1>
 
 <p>
-<a href="">Ecrire un billet</a><br/>
+<a href="index.php?action=createNewPost">Ecrire un billet</a><br/>
 <a href="">Modifier un billet</a><br/>
 <a href="">Effacer un billet</a><br/>
 <a href="">Modérer un commentaire</a><br/>

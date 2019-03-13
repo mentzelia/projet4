@@ -1,5 +1,6 @@
 <?php
 require('controller/frontend.php');
+require('controller/backend.php');
 
 try {
     if (isset($_GET['action'])) {
@@ -68,6 +69,10 @@ try {
                     
                 }
             }
+        }
+        
+        elseif($_GET['action'] == 'createNewPost'){
+            getCreatePostPage();
         }
         
         
