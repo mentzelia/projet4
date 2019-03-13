@@ -49,7 +49,7 @@ function addUser($login, $password1, $password2, $email)
     $login = htmlspecialchars($login);
     $password1 = htmlspecialchars($password1);
     $email = htmlspecialchars($email);
-    $result = $userManager->addUser($login, $password1, $password2, $email);
+    $result = $userManager->addUser($login, $password1, $email);
     
     require('view/frontend/loginView.php');
                

@@ -33,8 +33,8 @@ try {
         }
         
         elseif($_GET['action'] == 'user_registration') {
-            if(isset($_POST['login']) && isset($_POST['password1']) && isset($_POST['email'])){
-                if(!empty($_POST['login']) && !empty($_POST['password1']) && !empty($_POST['email'])) {
+            if(isset($_POST['login']) && isset($_POST['password1']) && isset($_POST['password2']) && isset($_POST['email'])){
+                if(!empty($_POST['login']) && !empty($_POST['password1']) && !empty($_POST['password2']) && !empty($_POST['email'])) {
                     
                     if($_POST['password1'] == $_POST['password2']) {
                         
