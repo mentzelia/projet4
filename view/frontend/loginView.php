@@ -15,7 +15,8 @@
 </form>
 
 <p>
-    <a href="index.php">Retour à la page d'accueil</a>
+    <a href="index.php">Retour à la page d'accueil</a><br/>
+    <a href="index.php?action=register">S'inscrire</a>
 </p>        
 
 

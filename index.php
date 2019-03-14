@@ -38,7 +38,7 @@ try {
                     
                     if($_POST['password1'] == $_POST['password2']) {
                         
-                        addUser($_POST['login'], $_POST['password1'], $_POST['email']);
+                        addUser($_POST['login'], $_POST['password1'], $_POST['password1'], $_POST['email']);
  
                     }
                 }  
