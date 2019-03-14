@@ -42,7 +42,7 @@ function GetRegisterForm()
     require('view/frontend/registerView.php');
 }
 
-function addUser($login, $password1, $password2, $email)
+function addUser($login, $password1, $email)
 {
     $userManager = new OpenClassRooms\Duboscq\Virginie\UserManager();
     
@@ -73,7 +73,7 @@ function verifyUserData($login, $password)
             echo 'Vous n\'êtes pas administrateur.';
         }
     }else{
-        echo 'Mauvais identifiant ou mot de passe'; 
+        echo 'Mauvais identifiant ou mot de passe<br /><a href="index.php?action=log_in">Retour</a>'; 
     }
     
 } 

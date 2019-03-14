@@ -38,22 +38,11 @@ try {
                     
                     if($_POST['password1'] == $_POST['password2']) {
                         
-                        addUser($_POST['login'], $_POST['password1'], $_POST['password2'], $_POST['email']);
-
-                        
-                      
-                    }else {
-                        echo 'Erreur: les mots de passe ne sont pas conccordants';
+                        addUser($_POST['login'], $_POST['password1'], $_POST['email']);
+ 
                     }
-                    
-                }else {
-                    echo 'Erreur: les champs sont vides';
-                }
-                
-            }else {
-                echo 'Erreur: absence des champs';
-            }
-            
+                }  
+            }  
         }
         
         elseif($_GET['action'] == 'log_in'){
