@@ -16,8 +16,7 @@ function sendPost($title, $content){
     
     $SendPost = $postManager->sendPost($title, $content);
     
-    require('view/backend/dashboardView.php');
-  
+    require('view/backend/dashboardView.php'); 
 }
 
 function getPostToModify(){
@@ -25,6 +24,14 @@ function getPostToModify(){
     $postManager = new OpenClassRooms\Duboscq\Virginie\PostManager(); 
     $posts = $postManager->getPostToModify(); 
     
-    require('view/backend/listPostsView.php');
-    
+    require('view/backend/listPostsView.php'); 
+}
+
+function modifyPost($postId)
+{
+    $postManager = new OpenClassRooms\Duboscq\Virginie\PostManager();
+
+    $post = $postManager->getPost($postId);
+
+    require('view/backend/modifyPostView.php');
 }

@@ -78,6 +78,16 @@ try {
             getPostToModify();
         }
         
+        elseif($_GET['modifyPost']){
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                modifyPost($_GET['id']);
+            }
+            else {
+                throw new Exception('Aucun identifiant de billet envoyé');
+            }
+        
+        }
+        
         
         
         

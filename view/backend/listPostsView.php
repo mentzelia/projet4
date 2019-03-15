@@ -12,7 +12,7 @@ while ($data = $posts->fetch())
         <p>
             "<?= htmlspecialchars($data['title']) ?>"
         
-            <em><a href="index.php?action=post&id=<?= $data['id'] ?>">Modifier</a></em>
+            <em><a href="index.php?action=modifyPost&id=<?= $data['id'] ?>">Modifier</a></em>
         </p>
     </div>
 <?php
