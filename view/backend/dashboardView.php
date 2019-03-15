@@ -6,7 +6,7 @@
 <h3>Que voulez-vous faire?</h3>
 
 <p>
-<a href="index.php?action=createNewPost.php">Ecrire un billet</a><br/>
+<a href="index.php?action=createNewPost">Ecrire un billet</a><br/>
 <a href="">Modifier un billet</a><br/>
 <a href="">Effacer un billet</a><br/>
 <a href="">Modérer un commentaire</a><br/>
@@ -17,4 +17,4 @@
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require('../backend/template.php'); ?>
+<?php require('view/backend/template.php'); ?>

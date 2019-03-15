@@ -64,6 +64,16 @@ try {
             getCreatePostPage();
         }
         
+        elseif($_GET['action'] == 'sendPost'){
+            if(isset($_POST['title']) AND isset($_POST['content'])){
+                
+                if(!empty($_POST['title']) AND !empty($_POST['content'])){
+                    
+                    sendPost($_POST['title'], $_POST['content']);
+                }
+            }  
+        }
+        
         
         
         

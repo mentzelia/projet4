@@ -7,8 +7,8 @@ class UserManager extends Manager
 {
     public function addUser($login, $password1, $email)
     {
-        $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT user FROM member_area WHERE user=?' );
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT user FROM member_area WHERE user=?' );
         $req->execute(array($login));
             
         if ($data = $req->fetch())
@@ -22,7 +22,7 @@ class UserManager extends Manager
 
                 $pass_hash = password_hash($password1, PASSWORD_DEFAULT);
 
-                $req = $bdd->prepare('INSERT INTO member_area (user, password, email, creation_date, role) VALUES(?, ?, ?, NOW(), 0)');
+                $req = $db->prepare('INSERT INTO member_area (user, password, email, creation_date, role) VALUES(?, ?, ?, NOW(), 0)');
 
                 $data = $req->execute(array($login, $pass_hash, $email));
                 return $data;
@@ -38,8 +38,8 @@ class UserManager extends Manager
     
     public function verifyUserData($login, $password)
     {
-        $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT user, password, role FROM member_area WHERE user=?, password=?' );
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT user, password, role FROM member_area WHERE user=?, password=?' );
         $req->execute(array($login, $password));
         $data = $req->fetch();
         
@@ -47,6 +47,8 @@ class UserManager extends Manager
         
         $req->closeCursor();
     }
+    
+    
 
 
 }

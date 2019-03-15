@@ -7,6 +7,15 @@
 </head>
 <body>
     <h1>Ecrivez un nouveau billet</h1>
-    <textarea> </textarea>
+    
+    <form method="post" action="index.php?action=sendPost">
+        <label for="title">Titre du billet:</label>
+        <input type= "text" name="title" value="" /><br />
+        
+        <textarea name="content"></textarea><br />
+        
+        <input type="submit" value="Publier" />
+    </form>
+   
 </body>
 </html>
