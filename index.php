@@ -78,7 +78,7 @@ try {
             getPostToModify();
         }
         
-        elseif($_GET['modifyPost']){
+        /elseif($_GET['modifyPost']){
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 modifyPost($_GET['id']);
             }
@@ -86,6 +86,15 @@ try {
                 throw new Exception('Aucun identifiant de billet envoyé');
             }
         
+        } 
+        
+        elseif($_GET['deletePost']){
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                deletePost($_GET['id']);
+            }
+            else {
+                throw new Exception('Aucun identifiant de billet envoyé');
+            }
         }
         
         

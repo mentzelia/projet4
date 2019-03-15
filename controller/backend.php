@@ -35,3 +35,13 @@ function modifyPost($postId)
 
     require('view/backend/modifyPostView.php');
 }
+
+function deletePost($postId)
+{
+    $postManager = new OpenClassRooms\Duboscq\Virginie\PostManager();
+
+    $post = $postManager->deleteSelectedPost($postId);
+    
+    require('view/backend/dashboardView.php'); 
+
+}

@@ -36,5 +36,16 @@ class PostManager extends Manager
         
     }
     
+    public function deleteSelectedPost($postId)
+    {
+        $db = $this->dbConnect();
+        $posts = $db->prepare('DELETE FROM posts WHERE id = ?');
+        $deletedPost = $posts->execute(array($PostId));
+
+        return $deletedPost;
+        
+        $req->closeCursor();
+    }
+    
    
 }

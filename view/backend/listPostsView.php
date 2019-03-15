@@ -13,6 +13,8 @@ while ($data = $posts->fetch())
             "<?= $data['title'] ?>" publié le  <?= $data['creation_date_fr'] ?>
             
             <em><a href="index.php?action=modifyPost&id=<?= $data['id'] ?>">Modifier</a></em>
+            
+            <em><a href="index.php?action=deletePost&id=<?= $data['id'] ?>">Supprimer</a></em>
         </p>
     </div>
 <?php
