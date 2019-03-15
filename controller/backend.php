@@ -22,7 +22,7 @@ function sendPost($title, $content){
 function getPostToModify(){
     
     $postManager = new OpenClassRooms\Duboscq\Virginie\PostManager(); 
-    $posts = $postManager->getPostToModify(); 
+    $posts = $postManager->getPosts(); 
     
     require('view/backend/listPostsView.php'); 
 }

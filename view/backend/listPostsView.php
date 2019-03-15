@@ -10,8 +10,8 @@ while ($data = $posts->fetch())
 ?>
     <div>
         <p>
-            "<?= htmlspecialchars($data['title']) ?>"
-        
+            "<?= $data['title'] ?>" publié le  <?= $data['creation_date_fr'] ?>
+            
             <em><a href="index.php?action=modifyPost&id=<?= $data['id'] ?>">Modifier</a></em>
         </p>
     </div>
