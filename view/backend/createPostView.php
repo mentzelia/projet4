@@ -16,6 +16,10 @@
         
         <input type="submit" value="Publier" />
     </form>
+    
+    <p>
+        <a href="view/backend/dashboardView.php">Retour</a>
+    </p>
    
 </body>
 </html>

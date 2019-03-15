@@ -17,6 +17,14 @@ function sendPost($title, $content){
     $SendPost = $postManager->sendPost($title, $content);
     
     require('view/backend/dashboardView.php');
+  
+}
+
+function getPostToModify(){
     
+    $postManager = new OpenClassRooms\Duboscq\Virginie\PostManager(); 
+    $posts = $postManager->getPostToModify(); 
+    
+    require('view/backend/listPostsView.php');
     
 }

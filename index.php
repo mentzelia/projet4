@@ -74,6 +74,10 @@ try {
             }  
         }
         
+        elseif($_GET['action'] == 'getPostToModify'){
+            getPostToModify();
+        }
+        
         
         
         

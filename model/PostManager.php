@@ -35,5 +35,13 @@ class PostManager extends Manager
         
         
     }
+    
+    public function getPostToModify()
+    {
+        $db = $this->dbConnect();
+        $req = $db->query('SELECT id, title FROM posts ORDER BY creation_date DESC LIMIT 0, 5');
+
+        return $req;
+    }
 
 }
