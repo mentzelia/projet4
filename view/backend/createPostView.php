@@ -1,14 +1,12 @@
-<?php $title = 'Billet simple pour l\'Alaska - Nouveau billet'; ?>
-
-<?php ob_start(); ?>
-
-<h1>ëcrivez un nouveau billet</h1>
-
-
-        
-        
-
-
-<?php $content = ob_get_clean(); ?>
-
-<?php require('../frontend/template.php'); ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Billet simple pour l'Alaska - Nouveau billet</title>
+  <script src="https://cloud.tinymce.com/5/tinymce.min.js"></script>
+  <script>tinymce.init({ selector:'textarea' });</script>
+</head>
+<body>
+    <h1>Ecrivez un nouveau billet</h1>
+    <textarea> </textarea>
+</body>
+</html>
