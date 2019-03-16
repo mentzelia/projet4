@@ -78,7 +78,7 @@ try {
             getPostToModify();
         }
         
-        /elseif($_GET['modifyPost']){
+        elseif($_GET['action'] == 'modifyPost'){
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 modifyPost($_GET['id']);
             }
@@ -88,7 +88,7 @@ try {
         
         } 
         
-        elseif($_GET['deletePost']){
+        elseif($_GET['action'] == 'deletePost'){
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 deletePost($_GET['id']);
             }

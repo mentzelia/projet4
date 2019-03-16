@@ -8,17 +8,12 @@
 <body>
     <h1>Modifiez un billet</h1>
     
-    <?php
-    while ($data = $posts->fetch())
-    {
-    ?>
-    
     <form method="post" action="">
         <label for="title">Titre du billet:</label>
-        <input type= "text" name="title" value="<?= htmlspecialchars($data['title']) ?>" /><br />
+        <input type= "text" name="title" value="<?= htmlspecialchars($post['title']) ?>" /><br />
         
         <textarea name="content">
-            <?= htmlspecialchars($data['content']) ?>
+            <?= htmlspecialchars($post['content']) ?>
         </textarea><br />
         
         <input type="submit" value="Modifier" />
@@ -27,11 +22,6 @@
     <p>
         <a href="view/backend/dashboardView.php">Retour</a>
     </p>
-    
-    <?php
-    }
-    $posts->closeCursor();
-    ?>
    
 </body>
 </html>
