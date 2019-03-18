@@ -10,10 +10,10 @@
     
     <form method="post" action="">
         <label for="title">Titre du billet:</label>
-        <input type= "text" name="title" value="<?= htmlspecialchars($post['title']) ?>" /><br />
+        <input type= "text" name="title" value="<?= $post['title'] ?>" /><br />
         
         <textarea name="content">
-            <?= htmlspecialchars($post['content']) ?>
+            <?= $post['content'] ?>
         </textarea><br />
         
         <input type="submit" value="Modifier" />
