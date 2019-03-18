@@ -86,7 +86,19 @@ try {
                 throw new Exception('Aucun identifiant de billet envoyé');
             }
         
-        } 
+        }
+        
+        elseif($_GET['action'] == 'updatePost'){
+            if(isset($_POST['title']) AND isset($_POST['content'])){
+                
+                if(!empty($_POST['title']) AND !empty($_POST['content'])){
+                    
+                    sendModifiedPost($_POST['title'], $_POST['content']);
+                }
+            } 
+            
+            
+        }
         
         elseif($_GET['action'] == 'deletePost'){
             if (isset($_GET['id']) && $_GET['id'] > 0) {

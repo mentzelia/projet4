@@ -14,7 +14,7 @@ function sendPost($title, $content){
     $title = htmlspecialchars($title);
     $content = htmlspecialchars($content);
     
-    $SendPost = $postManager->sendPost($title, $content);
+    $sendPost = $postManager->sendPost($title, $content);
     
     require('view/backend/dashboardView.php'); 
 }
@@ -34,6 +34,18 @@ function modifyPost($postId)
     $post = $postManager->getPost($postId);
 
     require('view/backend/modifyPostView.php');
+}
+
+function sendModifiedPost($title, $content){
+    $postManager = new OpenClassRooms\Duboscq\Virginie\PostManager();
+    
+    $title = htmlspecialchars($title);
+    $content = htmlspecialchars($content);
+    
+    $sendModifiedPost = $postManager->sendModifiedPost($title, $content);
+    
+    require('view/backend/dashboardView.php');
+    
 }
 
 function deletePost($postId)

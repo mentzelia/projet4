@@ -31,8 +31,19 @@ class PostManager extends Manager
 
         return $dataPost;
         
-        $req->closeCursor();
+        $req->closeCursor();  
         
+    }
+    
+    public function sendModifiedPost($title, $content)
+    {
+        $db = $this->dbConnect();
+        //$posts = $db->prepare('UPDATE posts SET title=?, content=?WHERE');
+        $dataPost = $posts->execute(array($title, $content));
+
+        return $dataPost;
+        
+        $req->closeCursor();  
         
     }
     
