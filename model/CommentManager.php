@@ -31,6 +31,14 @@ class CommentManager extends Manager
         
         return $updatedComment;
     }
+    
+    public function getWarnedComments()
+    {
+        $db = $this->dbConnect();
+        $req = $db->query('SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr, moderation FROM comments WHERE moderation = 1 ORDER BY comment_date DESC');
+
+        return $req;
+    }
 
     
 }

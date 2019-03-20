@@ -51,9 +51,16 @@ function sendModifiedPost($title, $content, $postId){
 function deletePost($postId)
 {
     $postManager = new OpenClassRooms\Duboscq\Virginie\PostManager();
-
     $post = $postManager->deleteSelectedPost($postId);
     
     require('view/backend/dashboardView.php'); 
 
+}
+
+function listWarnedComments()
+{
+    $commentManager = new OpenClassRooms\Duboscq\Virginie\CommentManager();
+    $warnedComments = $commentManager->getWarnedComments();
+    
+    require('view/backend/listWarnedCommentsView.php');
 }

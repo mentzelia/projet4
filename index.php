@@ -117,6 +117,12 @@ try {
             changeModerationStatusComment($GET['id']);
         }
         
+        elseif($_GET['action'] == 'manageComments'){
+            listWarnedComments();
+        }
+        
+        //elseif($_GET)
+        
         
         
         
