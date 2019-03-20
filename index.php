@@ -114,14 +114,21 @@ try {
         }
         
         elseif($_GET['action'] == 'warningPost'){
-            changeModerationStatusComment($GET['id']);
+            changeStatusToWarned($_GET['id']);
         }
         
         elseif($_GET['action'] == 'manageComments'){
             listWarnedComments();
         }
         
-        //elseif($_GET)
+        elseif($_GET['action'] == 'approveComment'){
+            changeStatusToOK($_GET['id']);
+        }
+        
+        elseif($_GET['action'] == 'deleteComment'){
+            deleteWarnedComment($_GET['id']);
+            
+        }
         
         
         

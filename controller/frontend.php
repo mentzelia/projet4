@@ -80,10 +80,10 @@ function verifyUserData($login, $password)
     
 } 
 
-function changeModerationStatusComment($commentId)
+function changeStatusToWarned($commentId)
 {
     $commentManager = new OpenClassRooms\Duboscq\Virginie\CommentManager();
-    $updatedComment = $commentManager->updateCommentModeration($commentId);
+    $updatedComment = $commentManager->updateModerationToWarned($commentId);
     
     require('view/frontend/listPostsView.php');
 }

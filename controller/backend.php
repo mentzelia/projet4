@@ -64,3 +64,19 @@ function listWarnedComments()
     
     require('view/backend/listWarnedCommentsView.php');
 }
+
+function changeStatusToOK($commentId)
+{
+    $commentManager = new OpenClassRooms\Duboscq\Virginie\CommentManager();
+    $updatedWarnedComment = $commentManager->updateModerationToOK($commentId);
+    
+    require('view/backend/dashboardView.php'); 
+}
+
+function deleteWarnedComment($commentId)
+{
+    $commentManager = new OpenClassRooms\Duboscq\Virginie\CommentManager();
+    $deletedWarnedComment = $commentManager->deleteSelectedComment($commentId);
+    
+    require('view/backend/dashboardView.php');
+}
