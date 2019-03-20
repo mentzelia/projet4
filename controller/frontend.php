@@ -64,9 +64,11 @@ function verifyUserData($login, $password)
 {
     $userManager = new OpenClassRooms\Duboscq\Virginie\UserManager();
     
-    $data = $userManager->verifyUserData($login, $password);
+    $data = $userManager->getUserData($login);
     
-    if($login == $data['user'] AND $password == $data['password']){
+    $passwordOK = password_verify($password, $data['password']);
+    
+    if($login == $data['user'] AND $passwordOK){
         if($data['role'] == 1){
             require('view/backend/dashboardView.php');
         }else{
@@ -77,3 +79,11 @@ function verifyUserData($login, $password)
     }
     
 } 
+
+function changeModerationStatusComment($commentId)
+{
+    $commentManager = new OpenClassRooms\Duboscq\Virginie\CommentManager();
+    $updatedComment = $commentManager->updateCommentModeration($commentId);
+    
+    require('view/frontend/listPostsView.php');
+}

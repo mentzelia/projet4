@@ -7,6 +7,7 @@ try {
         if ($_GET['action'] == 'listPosts') {
             listPosts();
         }
+        
         elseif ($_GET['action'] == 'post') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 post($_GET['id']);
@@ -93,7 +94,10 @@ try {
                 
                 if(!empty($_POST['title']) AND !empty($_POST['content'])){
                     
-                    sendModifiedPost($_POST['title'], $_POST['content']);
+                    if (isset($_GET['id']) && $_GET['id'] > 0){
+                        
+                        sendModifiedPost($_POST['title'], $_POST['content'], $GET['id']);
+                    } 
                 }
             } 
             
@@ -107,6 +111,10 @@ try {
             else {
                 throw new Exception('Aucun identifiant de billet envoyé');
             }
+        }
+        
+        elseif($_GET['action'] == 'warningPost'){
+            changeModerationStatusComment($GET['id']);
         }
         
         

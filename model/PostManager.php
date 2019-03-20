@@ -35,11 +35,11 @@ class PostManager extends Manager
         
     }
     
-    public function sendModifiedPost($title, $content)
+    public function sendModifiedPost($title, $content, $postId)
     {
         $db = $this->dbConnect();
-        //$posts = $db->prepare('UPDATE posts SET title=?, content=?WHERE');
-        $dataPost = $posts->execute(array($title, $content));
+        $posts = $db->prepare('UPDATE posts SET title = ?, content = ? WHERE id = ?');
+        $dataPost = $posts->execute(array($title, $content, $postId));
 
         return $dataPost;
         

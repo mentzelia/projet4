@@ -12,7 +12,7 @@ function sendPost($title, $content){
     $postManager = new OpenClassRooms\Duboscq\Virginie\PostManager();
     
     $title = htmlspecialchars($title);
-    $content = htmlspecialchars($content);
+    $content = $content;
     
     $sendPost = $postManager->sendPost($title, $content);
     
@@ -36,13 +36,13 @@ function modifyPost($postId)
     require('view/backend/modifyPostView.php');
 }
 
-function sendModifiedPost($title, $content){
+function sendModifiedPost($title, $content, $postId){
     $postManager = new OpenClassRooms\Duboscq\Virginie\PostManager();
     
     $title = htmlspecialchars($title);
     $content = htmlspecialchars($content);
     
-    $sendModifiedPost = $postManager->sendModifiedPost($title, $content);
+    $sendModifiedPost = $postManager->sendModifiedPost($title, $content, $postId);
     
     require('view/backend/dashboardView.php');
     

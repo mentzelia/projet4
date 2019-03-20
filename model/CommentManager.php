@@ -22,6 +22,15 @@ class CommentManager extends Manager
 
         return $affectedLines;
     }
+    
+    public function updateCommentModeration($commentId)
+    {
+        $db = $this->dbConnect();
+        $comments = $db->prepare('UPDATE comments SET moderation = 1 WHERE id = ?');
+        $updatedComment->execute(array($commentId));
+        
+        return $updatedComment;
+    }
 
     
 }
