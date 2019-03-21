@@ -51,7 +51,7 @@ function addUser($login, $password1, $password2, $email)
     $email = htmlspecialchars($email);
     $result = $userManager->addUser($login, $password1, $email);
     
-    require('view/frontend/loginView.php');
+    header('Location:index.php?action=log_in');
                
 }
 

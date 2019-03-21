@@ -26,6 +26,10 @@ while ($dataComment = $warnedComments->fetch())
 $warnedComments->closeCursor();
 ?>
 
+<p>
+    <a href="index.php?action=showDashboard">Retour</a>
+</p>
+
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>

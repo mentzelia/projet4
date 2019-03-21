@@ -16,7 +16,7 @@ function sendPost($title, $content){
     
     $sendPost = $postManager->sendPost($title, $content);
     
-    require('view/backend/dashboardView.php'); 
+    header('Location:index.php?action=showDashboard'); 
 }
 
 function getPostToModify(){
@@ -44,7 +44,7 @@ function sendModifiedPost($title, $content, $postId){
     
     $sendModifiedPost = $postManager->sendModifiedPost($title, $content, $postId);
     
-    require('view/backend/dashboardView.php');
+    header('Location:index.php?action=showDashboard'); 
     
 }
 
@@ -53,7 +53,7 @@ function deletePost($postId)
     $postManager = new OpenClassRooms\Duboscq\Virginie\PostManager();
     $post = $postManager->deleteSelectedPost($postId);
     
-    require('view/backend/dashboardView.php'); 
+    header('Location:index.php?action=showDashboard'); 
 
 }
 
@@ -70,7 +70,7 @@ function changeStatusToOK($commentId)
     $commentManager = new OpenClassRooms\Duboscq\Virginie\CommentManager();
     $updatedWarnedComment = $commentManager->updateModerationToOK($commentId);
     
-    require('view/backend/dashboardView.php'); 
+    header('Location:index.php?action=showDashboard'); 
 }
 
 function deleteWarnedComment($commentId)
@@ -78,7 +78,7 @@ function deleteWarnedComment($commentId)
     $commentManager = new OpenClassRooms\Duboscq\Virginie\CommentManager();
     $deletedWarnedComment = $commentManager->deleteSelectedComment($commentId);
     
-    require('view/backend/dashboardView.php');
+    header('Location:index.php?action=showDashboard'); 
 }
 
 function logOutSession()

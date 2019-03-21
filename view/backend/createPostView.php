@@ -18,7 +18,7 @@
     </form>
     
     <p>
-        <a href="view/backend/dashboardView.php">Retour</a>
+        <a href="index.php?action=showDashboard">Retour</a>
     </p>
    
 </body>
