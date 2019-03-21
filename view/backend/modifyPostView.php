@@ -8,7 +8,7 @@
 <body>
     <h1>Modifiez un billet</h1>
     
-    <form method="post" action="index.php?action=sendModifiedPost">
+    <form method="post" action="index.php?action=updatePost&id=<?= $_GET['id'] ?>">
         <label for="title">Titre du billet:</label>
         <input type= "text" name="title" value="<?= $post['title'] ?>" /><br />
         

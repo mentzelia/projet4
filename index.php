@@ -61,6 +61,17 @@ try {
             }
         }
         
+        elseif($_GET['action'] == 'showDashboard'){
+            print_r($_SESSION['id']);
+            if(isset($_SESSION['id']) AND isset($_SESSION['id'])){
+                
+                if(!empty($_SESSION['id']) AND !empty($_SESSION['user'])){
+                    
+                    showDashboard();
+                } 
+            } 
+        }
+        
         elseif($_GET['action'] == 'createNewPost'){
             getCreatePostPage();
         }
@@ -96,7 +107,7 @@ try {
                     
                     if (isset($_GET['id']) && $_GET['id'] > 0){
                         
-                        sendModifiedPost($_POST['title'], $_POST['content'], $GET['id']);
+                        sendModifiedPost($_POST['title'], $_POST['content'], $_GET['id']);
                     } 
                 }
             } 

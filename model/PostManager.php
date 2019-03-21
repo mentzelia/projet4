@@ -51,7 +51,7 @@ class PostManager extends Manager
     {
         $db = $this->dbConnect();
         $posts = $db->prepare('DELETE FROM posts WHERE id = ?');
-        $deletedPost = $posts->execute(array($PostId));
+        $deletedPost = $posts->execute(array($postId));
 
         return $deletedPost;
         

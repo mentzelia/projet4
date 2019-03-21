@@ -24,7 +24,7 @@ while ($comment = $comments->fetch())
 ?>
     <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
     <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-    <a href="index.php?action=warningPost">Signaler ce commentaire</a>
+    <a href="index.php?action=warningPost&id=<?= $_GET['id'] ?>">Signaler ce commentaire</a>
 <?php
 }
 $comments->closeCursor(); 

@@ -70,20 +70,32 @@ function verifyUserData($login, $password)
     
     if($login == $data['user'] AND $passwordOK){
         if($data['role'] == 1){
-            require('view/backend/dashboardView.php');
+            session_start();
+            $_SESSION['id']= $data['id'];
+            $_SESSION['user']= $data['user'];
+            
+            header('Location:index.php?action=showDashboard');
+            
         }else{
             echo 'Vous n\'êtes pas administrateur.';
         }
     }else{
         echo 'Mauvais identifiant ou mot de passe<br /><a href="index.php?action=log_in">Retour</a>'; 
-    }
-    
+    } 
 } 
+
+function showDashboard()
+{
+    require('view/backend/dashboardView.php'); 
+}
 
 function changeStatusToWarned($commentId)
 {
     $commentManager = new OpenClassRooms\Duboscq\Virginie\CommentManager();
     $updatedComment = $commentManager->updateModerationToWarned($commentId);
     
-    require('view/frontend/listPostsView.php');
+    header('Location: index.php');
+    
+    
+    
 }

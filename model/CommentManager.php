@@ -26,10 +26,10 @@ class CommentManager extends Manager
     public function updateModerationToWarned($commentId)
     {
         $db = $this->dbConnect();
-        $comments = $db->prepare('UPDATE comments SET moderation = 1 WHERE id = ?');
-        $updatedComment->execute(array($commentId));
+        $req = $db->prepare('UPDATE comments SET moderation = 1 WHERE id = ?');
+        $req->execute(array($commentId));
         
-        return $updatedComment;
+        return $req;
     }
     
     public function getWarnedComments()
