@@ -80,3 +80,14 @@ function deleteWarnedComment($commentId)
     
     require('view/backend/dashboardView.php');
 }
+
+function logOutSession()
+{
+    session_start();
+
+
+    $_SESSION = array();
+    session_destroy();
+    
+    require('view/backend/logOutView.php');
+}

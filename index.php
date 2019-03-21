@@ -62,14 +62,14 @@ try {
         }
         
         elseif($_GET['action'] == 'showDashboard'){
-            print_r($_SESSION['id']);
-            if(isset($_SESSION['id']) AND isset($_SESSION['id'])){
+            //print_r($_SESSION['id']);
+            //if(isset($_SESSION['id']) AND //isset($_SESSION['id'])){
                 
-                if(!empty($_SESSION['id']) AND !empty($_SESSION['user'])){
+                //if(!empty($_SESSION['id']) AND //!empty($_SESSION['user'])){
                     
                     showDashboard();
-                } 
-            } 
+                //} 
+            //} 
         }
         
         elseif($_GET['action'] == 'createNewPost'){
@@ -139,6 +139,10 @@ try {
         elseif($_GET['action'] == 'deleteComment'){
             deleteWarnedComment($_GET['id']);
             
+        }
+        
+        elseif($_GET['action'] == 'log_out'){
+            logOutSession();
         }
         
         
