@@ -15,9 +15,9 @@ while ($dataComment = $warnedComments->fetch())
             <br />        
             <?= nl2br($dataComment['comment']) ?>
             <br />
-            <em><a href="index.php?action=approveComment">Approuver le commentaire</a></em>
+            <em><a href="index.php?action=approveComment&id=<?= $dataComment['id'] ?>">Approuver le commentaire</a></em>
             <br />
-            <em><a href="index.php?action=deleteComment">Supprimer le commentaire</a></em>
+            <em><a href="index.php?action=deleteComment&id=<?= $dataComment['id'] ?>">Supprimer le commentaire</a></em>
         </p>
     </div>
 

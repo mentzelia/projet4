@@ -11,7 +11,7 @@ class UserManager extends Manager
         $req = $db->prepare('SELECT user FROM member_area WHERE user=?' );
         $req->execute(array($login));
             
-        if ($req->fetch())
+        if ($data = $req->fetch())
         {
             echo ('Ce nom d\'utilisateur est déja pris');
             return 'erreur';
@@ -24,8 +24,8 @@ class UserManager extends Manager
 
                 $req = $db->prepare('INSERT INTO member_area (user, password, email, creation_date, role) VALUES(?, ?, ?, NOW(), 0)');
 
-                $req->execute(array($login, $pass_hash, $email));
-                return $req;
+                $data = $req->execute(array($login, $pass_hash, $email));
+                return $data;
             }
 
             else
@@ -41,9 +41,9 @@ class UserManager extends Manager
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT id, user, password, role FROM member_area WHERE user=?' );
         $req->execute(array($login));
-        $req->fetch();
+        $data = $req->fetch();
         
-        return $req;
+        return $data;
         
         $req->closeCursor();
     }
