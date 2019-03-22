@@ -18,18 +18,18 @@ class PostManager extends Manager
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM posts WHERE id = ?');
         $req->execute(array($postId));
-        $post = $req->fetch();
+        $req->fetch();
 
-        return $post;
+        return $req;
     }
     
     public function sendPost($title, $content)
     {
         $db = $this->dbConnect();
-        $posts = $db->prepare('INSERT INTO posts(title, content, creation_date) VALUES(?, ?, NOW())');
-        $dataPost = $posts->execute(array($title, $content));
+        $req = $db->prepare('INSERT INTO posts(title, content, creation_date) VALUES(?, ?, NOW())');
+        $req->execute(array($title, $content));
 
-        return $dataPost;
+        return $req;
         
         $req->closeCursor();  
         
@@ -38,10 +38,10 @@ class PostManager extends Manager
     public function sendModifiedPost($title, $content, $postId)
     {
         $db = $this->dbConnect();
-        $posts = $db->prepare('UPDATE posts SET title = ?, content = ? WHERE id = ?');
-        $dataPost = $posts->execute(array($title, $content, $postId));
+        $req = $db->prepare('UPDATE posts SET title = ?, content = ? WHERE id = ?');
+        $req->execute(array($title, $content, $postId));
 
-        return $dataPost;
+        return $req;
         
         $req->closeCursor();  
         
@@ -50,10 +50,10 @@ class PostManager extends Manager
     public function deleteSelectedPost($postId)
     {
         $db = $this->dbConnect();
-        $posts = $db->prepare('DELETE FROM posts WHERE id = ?');
-        $deletedPost = $posts->execute(array($postId));
+        $req = $db->prepare('DELETE FROM posts WHERE id = ?');
+        $req->execute(array($postId));
 
-        return $deletedPost;
+        return $req;
         
         $req->closeCursor();
     }

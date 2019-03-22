@@ -8,19 +8,19 @@ class CommentManager extends Manager
     public function getComments($postId)
     {
         $db = $this->dbConnect();
-        $comments = $db->prepare('SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments WHERE post_id = ? ORDER BY comment_date DESC');
-        $comments->execute(array($postId));
+        $req = $db->prepare('SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments WHERE post_id = ? ORDER BY comment_date DESC');
+        $req->execute(array($postId));
 
-        return $comments;
+        return $req;
     }
 
     public function postComment($postId, $author, $comment)
     {
         $db = $this->dbConnect();
-        $comments = $db->prepare('INSERT INTO comments(post_id, author, comment, comment_date) VALUES(?, ?, ?, NOW())');
-        $affectedLines = $comments->execute(array($postId, $author, $comment));
+        $req = $db->prepare('INSERT INTO comments(post_id, author, comment, comment_date) VALUES(?, ?, ?, NOW())');
+        $req->execute(array($postId, $author, $comment));
 
-        return $affectedLines;
+        return $req;
     }
     
     public function updateModerationToWarned($commentId)
@@ -43,19 +43,19 @@ class CommentManager extends Manager
     public function updateModerationToOK($commentId)
     {
         $db = $this->dbConnect();
-        $comments = $db->prepare('UPDATE comments SET moderation = 0 WHERE id = ?');
-        $updatedComment->execute(array($commentId));
+        $req = $db->prepare('UPDATE comments SET moderation = 0 WHERE id = ?');
+        $req->execute(array($commentId));
         
-        return $updatedComment;
+        return $req;
     }
     
     public function deleteSelectedComment($postId)
     {
         $db = $this->dbConnect();
-        $comments = $db->prepare('DELETE FROM comments WHERE id = ?');
-        $deletedComment->execute(array($commentId));
+        $req = $db->prepare('DELETE FROM comments WHERE id = ?');
+        $req->execute(array($commentId));
         
-        return $deletedComment;
+        return $req;
     }
 
     
