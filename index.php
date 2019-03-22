@@ -92,6 +92,7 @@ try {
         
         elseif($_GET['action'] == 'modifyPost'){
             if (isset($_GET['id']) && $_GET['id'] > 0) {
+                $postId = $_GET['id'];
                 modifyPost($_GET['id']);
             }
             else {
