@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require('controller/frontend.php');
 require('controller/backend.php');
 
@@ -62,14 +64,13 @@ try {
         }
         
         elseif($_GET['action'] == 'showDashboard'){
-            print_r($_SESSION['id']);
-            //if(isset($_SESSION['id']) AND //isset($_SESSION['user'])){
+            if(isset($_SESSION['id']) AND isset($_SESSION['user'])){
                 
-                //if(!empty($_SESSION['id']) AND //!empty($_SESSION['user'])){
+                if(!empty($_SESSION['id']) AND !empty($_SESSION['user'])){
                     
-                    //showDashboard();
-                //} 
-            //} 
+                    showDashboard();
+                } 
+            } 
         }
         
         elseif($_GET['action'] == 'createNewPost'){

@@ -82,9 +82,6 @@ function deleteWarnedComment($commentId)
 
 function logOutSession()
 {
-    session_start();
-
-
     $_SESSION = array();
     session_destroy();
     
