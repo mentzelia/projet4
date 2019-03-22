@@ -12,7 +12,6 @@ function sendPost($title, $content){
     $postManager = new OpenClassRooms\Duboscq\Virginie\PostManager();
     
     $title = htmlspecialchars($title);
-    $content = $content;
     
     $sendPost = $postManager->sendPost($title, $content);
     
@@ -40,7 +39,7 @@ function sendModifiedPost($title, $content, $postId){
     $postManager = new OpenClassRooms\Duboscq\Virginie\PostManager();
     
     $title = htmlspecialchars($title);
-    $content = htmlspecialchars($content);
+
     
     $sendModifiedPost = $postManager->sendModifiedPost($title, $content, $postId);
     
