@@ -125,7 +125,9 @@ try {
         }
         
         elseif($_GET['action'] == 'warningPost'){
-            changeStatusToWarned($_GET['id']);
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                changeStatusToWarned($_GET['id']);
+            }
         }
         
         elseif($_GET['action'] == 'manageComments'){
@@ -133,11 +135,15 @@ try {
         }
         
         elseif($_GET['action'] == 'approveComment'){
-            changeStatusToOK($_GET['id']);
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                changeStatusToOK($_GET['id']);
+            }
         }
         
         elseif($_GET['action'] == 'deleteComment'){
-            deleteWarnedComment($_GET['id']);
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                deleteWarnedComment($_GET['id']);
+            }
             
         }
         
