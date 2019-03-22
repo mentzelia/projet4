@@ -22,6 +22,10 @@ while ($data = $posts->fetch())
 $posts->closeCursor();
 ?>
 
+<p>
+    <a href="index.php?action=showDashboard">Retour</a>
+</p>
+
      
 
 

@@ -1,4 +1,4 @@
-<?php $title = 'Gestion des erreurs';
+<?php $title = 'Billet simple pour l\'Alaska - Gestion des erreurs';
 
 ob_start(); 
 ?>
