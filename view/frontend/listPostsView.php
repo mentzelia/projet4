@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 <h1>Billet simple pour l'Alaska</h1>
-<p>Je suis Jean Forteroche, écrivain de plusieurs best-sellers.
+<p class="introduction">Je suis Jean Forteroche, écrivain de plusieurs best-sellers.
     Aujourd'hui, j'entame un voyage de plusieurs mois à la découverte de l'Alaska. J'ai envie de partager avec vous mes découvertes, mon émerveillement, mes joies, mes doutes à travers ce blog.<br/>Découvrez ci-dessous les derniers billets que j'ai posté:</p>
 
 

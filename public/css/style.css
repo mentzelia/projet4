@@ -1,17 +1,21 @@
+body
+{
+    background-color:#45D4FF;
+}
+
 h1, h3
 {
     text-align:center;
 }
 h3
 {
-    background-color:black;
-    color:white;
+    color:#FFFFFF;
     font-size:0.9em;
     margin-bottom:0px;
 }
 .news p
 {
-    background-color:#CCCCCC;
+    background-color:#FFFFFF;
     margin-top:0px;
 }
 .news
@@ -24,4 +28,16 @@ a
 {
     text-decoration: none;
     color: blue;
+}
+
+.introduction
+{
+    text-align: center;
+}
+
+form
+{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
 }
