@@ -1,6 +1,7 @@
 body
 {
     background-image: url("../img/hiking.jpg");
+    background-size: cover;
 }
 
 h1, h3
@@ -11,45 +12,66 @@ h1, h3
 
 h1
 {
-    font-size: 3em;
-
+    font-size: 5em;
+    text-transform: uppercase;
+    color:rgb(26, 41, 122);
+    font-family: 'Luckiest Guy', cursive;
 }
 
 h3
 {
-    color:#FFFFFF;
-    font-size:1.5em;
-
+    color: rgb(16, 105, 160);
+    font-size:1.8em;
     margin-bottom:0px;
+    font-family: 'Special Elite', cursive;
 }
 
 p
 {
-    font-size: 1.1em;
+    font-size: 1.7em;
+    font-family: 'Reenie Beanie', cursive; 
+    font-weight: 700;
+    text-align: justify;
+    
 }
+
 .news p
 {
-    background-color:#FFFFFF;
-    padding: 10px;
+    margin: 1%;
+    
 }
 
 .news
 {
     width:70%;
-    margin:auto;
+    margin: auto;
+    margin-top: 3%;
+    background-color:rgba(255, 255, 255, 0.5);
+    padding: 10px;
+}
+
+em
+{
+    font-family: 'Special Elite', cursive;
+    font-size: 0.6em;
+    
 }
 
 a
 {
     text-decoration: none;
-    color: blue;
+    color: rgb(16, 105, 160);
+    
 }
 
 .introduction
 {
-    text-align: center;
-    width: 70%;
+    
+    width: 68%;
     margin: auto;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3em;
     
 }
 
@@ -58,4 +80,11 @@ form
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+}
+
+.connect a
+{
+    font-size: 1.5em;
+    color: white;
+    margin-left: 2%;
 }
