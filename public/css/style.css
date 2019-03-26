@@ -1,23 +1,38 @@
 body
 {
-    background-color:#45D4FF;
+    background-image: url("../img/hiking.jpg");
 }
 
 h1, h3
 {
     text-align:center;
+     
 }
+
+h1
+{
+    font-size: 3em;
+
+}
+
 h3
 {
     color:#FFFFFF;
-    font-size:0.9em;
+    font-size:1.5em;
+
     margin-bottom:0px;
+}
+
+p
+{
+    font-size: 1.1em;
 }
 .news p
 {
     background-color:#FFFFFF;
-    margin-top:0px;
+    padding: 10px;
 }
+
 .news
 {
     width:70%;
@@ -33,6 +48,9 @@ a
 .introduction
 {
     text-align: center;
+    width: 70%;
+    margin: auto;
+    
 }
 
 form
