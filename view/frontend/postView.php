@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 
-<h1>Titre du billet</h1>
+<h2>Titre du billet</h2>
 <p><a href="index.php">Retour à la liste des billets</a></p>
         
 <div class="news">
@@ -16,15 +16,18 @@
     </p>
 </div>
 
-<h2>Commentaires</h2>
+<h4>Commentaires</h4>
 
 <?php
 while ($comment = $comments->fetch())
 {
 ?>
-    <p><strong><?= $comment['author'] ?></strong> le <?= $comment['comment_date_fr'] ?></p>
-    <p><?= nl2br($comment['comment']) ?></p>
+<div class="comment">
+    <p class="authorDate"><strong><?= $comment['author'] ?></strong> le <?= $comment['comment_date_fr'] ?></p>
+    <p class="textComment"><?= nl2br($comment['comment']) ?></p>
     <a href="index.php?action=warningPost&id=<?= $comment['id'] ?>">Signaler ce commentaire</a>
+</div>
+
 <?php
 }
 $comments->closeCursor(); 

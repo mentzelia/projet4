@@ -4,7 +4,7 @@ body
     background-size: cover;
 }
 
-h1, h3
+h1, h2, h3
 {
     text-align:center;
      
@@ -18,12 +18,34 @@ h1
     font-family: 'Luckiest Guy', cursive;
 }
 
+h2
+{
+    font-size: 3em;
+    color:rgb(26, 41, 122);
+    font-family: 'Luckiest Guy', cursive;
+}
+
 h3
 {
     color: rgb(16, 105, 160);
     font-size:1.8em;
     margin-bottom:0px;
     font-family: 'Special Elite', cursive;
+}
+
+h4
+{
+    width: 70%;
+    height: 50%;
+    color: white;
+    font-size:1.8em;
+    margin: auto;
+    margin-top:50px;
+    padding: 1%;
+    
+    background: linear-gradient(135deg, rgb(62, 189, 255), rgb(5, 73, 130));
+    font-family: 'Special Elite', cursive;
+    
 }
 
 p
@@ -41,7 +63,7 @@ p
     
 }
 
-.news
+.news, .comment
 {
     width:70%;
     margin: auto;
@@ -55,6 +77,22 @@ em
     font-family: 'Special Elite', cursive;
     font-size: 0.6em;
     
+}
+
+.comment a, .authorDate
+{
+    font-family: 'Special Elite', cursive;
+    font-weight: bold;
+}
+
+.comment a
+{
+    font-size: 1em;
+}
+
+.authorDate
+{
+    font-size: 1.2em;
 }
 
 a
