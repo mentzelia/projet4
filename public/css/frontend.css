@@ -6,6 +6,8 @@ body
 {
     background-image: url("../img/hiking.jpg");
     background-size: cover;
+    width: auto;
+    margin: auto;
 }
 
 h1, h2, h3
