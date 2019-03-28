@@ -10,7 +10,7 @@
     <script>tinymce.init({ selector:'textarea' });</script>
 </head>
 <body>
-    <h1>Modifiez un billet</h1>
+    <h2>Modifier un billet</h2>
     
     <form method="post" action="index.php?action=updatePost&id=<?= $postId ?>">
         <label for="title">Titre du billet:</label>

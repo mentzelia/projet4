@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 
-<h1>Quel billet souhaitez-vous modifier?</h1><br />
+<h2>Quel billet souhaitez-vous modifier?</h2><br />
 
 <?php
 while ($data = $posts->fetch())
