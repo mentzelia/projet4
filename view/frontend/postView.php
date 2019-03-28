@@ -33,17 +33,21 @@ $comments->closeCursor();
 ?>
 
 <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
+    
     <div class="field">
         <label for="author">Auteur</label>
         <input type="text" id="author" name="author" />
     </div>
+    
     <div class="field">
         <label for="comment">Commentaire</label>
         <textarea id="comment" name="comment"></textarea>
     </div>
+    
     <div class="field">
         <input class="formButton" type="submit" />
     </div>
+    
 </form>
 
 

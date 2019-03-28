@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 
-<h1>Connexion à l'administration</h1>
+<h2>Connexion</h2>
         
 <form method="post" action="index.php?action=admin_connexion">
     <label for="login">Nom d'utilisateur:</label>
@@ -11,10 +11,10 @@
     <label for="password">Mot de passe:</label>
     <input type="password" name="password" value="" id="password" /><br />
 
-    <input type="submit" value="Se connecter" />
+    <input class="formButton" type="submit" value="Se connecter" />
 </form>
 
-<p>
+<p class="connect">
     <a href="index.php">Retour à la page d'accueil</a><br/>
     <a href="index.php?action=register">S'inscrire</a>
 </p>        
