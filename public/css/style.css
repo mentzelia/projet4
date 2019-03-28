@@ -57,19 +57,35 @@ p
     
 }
 
+.connect a
+{
+    font-size: 1.5em;
+    color: white;
+    margin-left: 2%;
+}
+
 .news p
 {
     margin: 1%;
     
 }
 
-.news, .comment
+.news, .comments
 {
     width:70%;
     margin: auto;
     margin-top: 3%;
-    background-color:rgba(255, 255, 255, 0.5);
     padding: 10px;
+}
+
+.news
+{
+    background-color:rgba(255, 255, 255, 0.5);
+}
+
+.comments
+{
+    background-color: rgba(62, 189, 255, 0.5);
 }
 
 em
@@ -79,13 +95,13 @@ em
     
 }
 
-.comment a, .authorDate
+.comments a, .authorDate
 {
     font-family: 'Special Elite', cursive;
     font-weight: bold;
 }
 
-.comment a
+.comments a
 {
     font-size: 1em;
 }
@@ -116,13 +132,31 @@ a
 form
 {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+    flex-flow: column wrap;
+    background: linear-gradient(135deg, rgb(62, 189, 255), rgb(5, 73, 130));
+    width: 30%;
+    margin: 2% auto;
+    
+    padding-top: 2%;
+    padding-bottom: 0.5%;
+    align-items: center;
+    
 }
 
-.connect a
+.field
 {
-    font-size: 1.5em;
-    color: white;
-    margin-left: 2%;
+    display: flex;
+    flex-flow: column wrap;
+    padding-bottom: 5%;
 }
+
+label
+{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.formButton
+{
+    font-family: 'Special Elite', cursive;
+}
+
