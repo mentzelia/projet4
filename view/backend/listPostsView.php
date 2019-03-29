@@ -8,13 +8,14 @@
 while ($data = $posts->fetch())
 {
 ?>
-    <div>
+    <div class="editActions">
         <p>
             "<?= $data['title'] ?>" publié le  <?= $data['creation_date_fr'] ?>
             
-            <em><a href="index.php?action=modifyPost&id=<?= $data['id'] ?>">Modifier</a></em>
+            <a href="index.php?action=modifyPost&id=<?= $data['id'] ?>"><i class="fas fa-edit"></i></a>
             
-            <em><a href="index.php?action=deletePost&id=<?= $data['id'] ?>">Supprimer</a></em>
+            
+            <a href="index.php?action=deletePost&id=<?= $data['id'] ?>"><i class="fas fa-trash-alt"></i></a>
         </p>
     </div>
 <?php
@@ -22,7 +23,7 @@ while ($data = $posts->fetch())
 $posts->closeCursor();
 ?>
 
-<p>
+<p class="return">
     <a href="index.php?action=showDashboard">Retour</a>
 </p>
 

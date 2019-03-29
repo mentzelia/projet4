@@ -33,3 +33,26 @@ adaptation tablette et écrans PC avec media Queries*/
     background-color:rgba(255, 255, 255, 0.5);
 }
 
+.editActions
+{
+    display: flex;
+    justify-content: flex-start;
+    width: 50%;
+    margin: auto;
+    padding: 0% 2%;
+    background-color:rgba(255, 255, 255, 0.5);
+    
+}
+
+.return 
+{
+    margin-left: 1%;
+}
+
+.return a
+{
+    color: white;
+    font-size: 1.5em;
+}
+
+

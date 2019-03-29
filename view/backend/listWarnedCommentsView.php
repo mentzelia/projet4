@@ -15,9 +15,8 @@ while ($dataComment = $warnedComments->fetch())
             <br />        
             <?= nl2br($dataComment['comment']) ?>
             <br />
-            <em><a href="index.php?action=approveComment&id=<?= $dataComment['id'] ?>">Approuver le commentaire</a></em>
-            <br />
-            <em><a href="index.php?action=deleteComment&id=<?= $dataComment['id'] ?>">Supprimer le commentaire</a></em>
+            <a href="index.php?action=approveComment&id=<?= $dataComment['id'] ?>"><i class="fas fa-thumbs-up"></i></a>
+            <a href="index.php?action=deleteComment&id=<?= $dataComment['id'] ?>"><i class="fas fa-trash-alt"></i></a>
         </p>
     </div>
 
@@ -26,7 +25,7 @@ while ($dataComment = $warnedComments->fetch())
 $warnedComments->closeCursor();
 ?>
 
-<p>
+<p class="return">
     <a href="index.php?action=showDashboard">Retour</a>
 </p>
 

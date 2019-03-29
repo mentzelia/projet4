@@ -3,7 +3,7 @@
 ob_start(); 
 ?>
 
-<p>Vous êtes maintenant déconnecté.<br/>
+<p class="return">Vous êtes maintenant déconnecté.<br/>
     <a href="index.php?action=log_in">Me reconnecter</a>
 </p>
 
