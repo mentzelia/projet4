@@ -68,7 +68,8 @@ try {
                 
                 if(!empty($_SESSION['id']) AND !empty($_SESSION['user'])){
                     
-                    showDashboard();
+                    //showDashboard();
+                    listWarnedComments();
                 } 
             } 
         }

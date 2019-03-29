@@ -19,6 +19,30 @@
         <p>TEST</p>
     </div>
 </div>
+
+
+<?php
+while ($dataComment = $warnedComments->fetch())
+{
+?>
+    <div class="news">
+        <p>
+            Commentaire écrit par <?= $dataComment['author'] ?>
+            <em>le <?= $dataComment['comment_date_fr'] ?></em>
+            <br />        
+            <?= nl2br($dataComment['comment']) ?>
+            <br />
+            <a href="index.php?action=approveComment&id=<?= $dataComment['id'] ?>"><i class="fas fa-thumbs-up"></i></a>
+            <a href="index.php?action=deleteComment&id=<?= $dataComment['id'] ?>"><i class="fas fa-trash-alt"></i></a>
+        </p>
+    </div>
+
+<?php
+}
+$warnedComments->closeCursor();
+?>
+
+
      
 
 

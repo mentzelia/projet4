@@ -61,7 +61,8 @@ function listWarnedComments()
     $commentManager = new OpenClassRooms\Duboscq\Virginie\CommentManager();
     $warnedComments = $commentManager->getWarnedComments();
     
-    require('view/backend/listWarnedCommentsView.php');
+    //require('view/backend/listWarnedCommentsView.php');
+    require('view/backend/dashboardView.php');
 }
 
 function changeStatusToOK($commentId)
