@@ -133,9 +133,6 @@ try {
             }
         }
         
-        elseif($_GET['action'] == 'manageComments'){
-            listWarnedComments();
-        }
         
         elseif($_GET['action'] == 'approveComment'){
             if (isset($_GET['id']) && $_GET['id'] > 0) {

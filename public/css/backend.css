@@ -15,11 +15,24 @@ adaptation tablette et écrans PC avec media Queries*/
     background: linear-gradient(135deg, rgb(62, 189, 255), rgb(5, 73, 130));
 }
 
-.actions p a
+.actions ul li
 {
     color: white;
 }
 
+.actions ul li a
+{
+    color: white;
+    font-size: 1.7em;
+    font-family: 'Reenie Beanie', cursive; 
+    font-weight: 700;
+    text-align: justify;
+}
+
+.actions h3
+{
+    color: white;
+}
 
 .actions, .lastNews
 {
