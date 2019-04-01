@@ -84,11 +84,6 @@ function verifyUserData($login, $password)
     } 
 } 
 
-function showDashboard()
-{
-    require('view/backend/dashboardView.php'); 
-}
-
 function changeStatusToWarned($commentId)
 {
     $commentManager = new OpenClassRooms\Duboscq\Virginie\CommentManager();

@@ -49,7 +49,14 @@ try {
         }
         
         elseif($_GET['action'] == 'log_in'){
-            getLogInForm();
+            if(!empty($_SESSION['user']))
+            {
+                listWarnedComments();
+                
+            }else{
+                getLogInForm();
+            }
+            
         }
         
         elseif($_GET['action'] == 'admin_connexion'){
@@ -68,7 +75,6 @@ try {
                 
                 if(!empty($_SESSION['id']) AND !empty($_SESSION['user'])){
                     
-                    //showDashboard();
                     listWarnedComments();
                 } 
             } 
