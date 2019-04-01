@@ -1,7 +1,3 @@
-/* css du backend
-configuré pour mobile jusqu'à 480px
-adaptation tablette et écrans PC avec media Queries*/
-
 .dashboard
 {
     display: flex;

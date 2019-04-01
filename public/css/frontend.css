@@ -199,12 +199,3 @@ label
     
 }
 
-/* Pour écran PC à partir de 1601px */
-@media screen and (min-width: 1601px)
-{
-    form
-    {
-       
-    }
-    
-}
