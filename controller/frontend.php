@@ -26,7 +26,10 @@ function post($postId)
 function addComment($postId, $author, $comment)
 {
     $commentManager = new OpenClassRooms\Duboscq\Virginie\CommentManager();
-
+    
+    $postId = htmlspecialchars($postId);
+    $author = htmlspecialchars($author);
+    $comment = htmlspecialchars($comment);
     $affectedLines = $commentManager->postComment($postId, $author, $comment);
 
     if ($affectedLines === false) {
