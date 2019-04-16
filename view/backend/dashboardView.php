@@ -13,13 +13,14 @@
             <li><a href="index.php?action=log_out">Se déconnecter</a></li>
         </ul>
     </div>
+    
+    <div class="lastNews">
+        <h3>Commentaires signalés</h3>
 
-    <?php
-    while ($dataComment = $warnedComments->fetch())
-    {
-    ?>
-        <div class="lastNews">
-            <h3>Commentaires signalés</h3>
+        <?php
+        while ($dataComment = $warnedComments->fetch())
+        {
+        ?>
             <p>
                 Commentaire écrit par <?= $dataComment['author'] ?>
                 <em>le <?= $dataComment['comment_date_fr'] ?></em>
@@ -29,15 +30,11 @@
                 <a href="index.php?action=approveComment&id=<?= $dataComment['id'] ?>"><i class="fas fa-thumbs-up"></i></a>
                 <a href="index.php?action=deleteComment&id=<?= $dataComment['id'] ?>"><i class="fas fa-trash-alt"></i></a>
             </p>
-        </div>
-
-    <?php
-    }
-    $warnedComments->closeCursor();
-    ?>
-
-
-     
+        <?php
+        }
+        $warnedComments->closeCursor();
+        ?>
+    </div>  
 
 
 <?php $content = ob_get_clean(); ?>

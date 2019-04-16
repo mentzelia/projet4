@@ -1,8 +1,9 @@
 .dashboard
 {
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
     
 }
 
@@ -40,6 +41,7 @@
 .lastNews
 {
     background-color:rgba(255, 255, 255, 0.5);
+    margin-bottom: 3%;
 }
 
 .editActions
