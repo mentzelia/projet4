@@ -81,56 +81,98 @@ try {
         }
         
         elseif($_GET['action'] == 'createNewPost'){
-            getCreatePostPage();
+            if(isset($_SESSION['id']) AND isset($_SESSION['user'])){
+                
+                if(!empty($_SESSION['id']) AND !empty($_SESSION['user'])){
+                    getCreatePostPage();
+                }
+            }else{
+                    getLogInForm();
+            }
         }
         
         elseif($_GET['action'] == 'sendPost'){
-            if(isset($_POST['title']) AND isset($_POST['content'])){
+            if(isset($_SESSION['id']) AND isset($_SESSION['user'])){
                 
-                if(!empty($_POST['title']) AND !empty($_POST['content'])){
+                if(!empty($_SESSION['id']) AND !empty($_SESSION['user'])){
                     
-                    sendPost($_POST['title'], $_POST['content']);
+                    if(isset($_POST['title']) AND isset($_POST['content'])){
+                
+                        if(!empty($_POST['title']) AND !empty($_POST['content'])){
+                    
+                            sendPost($_POST['title'], $_POST['content']);
+                        }
+                    } 
                 }
-            }  
+            }else{
+                    getLogInForm();
+            }
         }
         
         elseif($_GET['action'] == 'getPostToModify'){
-            getPostToModify();
+            if(isset($_SESSION['id']) AND isset($_SESSION['user'])){
+                
+                if(!empty($_SESSION['id']) AND !empty($_SESSION['user'])){
+                    
+                    getPostToModify();
+                }
+            }else{
+                    getLogInForm();
+            }
         }
         
         elseif($_GET['action'] == 'modifyPost'){
-            if (isset($_GET['id']) && $_GET['id'] > 0) {
-                $postId = $_GET['id'];
-                modifyPost($_GET['id']);
+            if(isset($_SESSION['id']) AND isset($_SESSION['user'])){
+                
+                if(!empty($_SESSION['id']) AND !empty($_SESSION['user'])){
+                    
+                    if (isset($_GET['id']) && $_GET['id'] > 0) {
+                        $postId = $_GET['id'];
+                        modifyPost($_GET['id']);
+                    }
+                    else {
+                        throw new Exception('Aucun identifiant de billet envoyé');
+                    }
+                }
             }
-            else {
-                throw new Exception('Aucun identifiant de billet envoyé');
-            }
-        
+            else{
+                getLogInForm();
+            }           
         }
         
         elseif($_GET['action'] == 'updatePost'){
-            if(isset($_POST['title']) AND isset($_POST['content'])){
-                
-                if(!empty($_POST['title']) AND !empty($_POST['content'])){
-                    
-                    if (isset($_GET['id']) && $_GET['id'] > 0){
+            if(isset($_SESSION['id']) AND isset($_SESSION['user'])){
+                if(!empty($_SESSION['id']) AND !empty($_SESSION['user'])){
+                    if(isset($_POST['title']) AND isset($_POST['content'])){
+                        if(!empty($_POST['title']) AND !empty($_POST['content'])){
+                            if (isset($_GET['id']) && $_GET['id'] > 0){
                         
-                        sendModifiedPost($_POST['title'], $_POST['content'], $_GET['id']);
+                                sendModifiedPost($_POST['title'], $_POST['content'], $_GET['id']);
+                            } 
+                        }
                     } 
                 }
+            }
+            else{
+                getLogInForm();
             } 
-            
-            
         }
         
         elseif($_GET['action'] == 'deletePost'){
-            if (isset($_GET['id']) && $_GET['id'] > 0) {
-                deletePost($_GET['id']);
+            if(isset($_SESSION['id']) AND isset($_SESSION['user'])){
+                if(!empty($_SESSION['id']) AND !empty($_SESSION['user'])){
+                    if (isset($_GET['id']) && $_GET['id'] > 0) {
+                        
+                        deletePost($_GET['id']);
+                    }
+                    else {
+                        throw new Exception('Aucun identifiant de billet envoyé');
+                    }
+                }
             }
-            else {
-                throw new Exception('Aucun identifiant de billet envoyé');
-            }
+            else{
+                getLogInForm();
+            } 
         }
         
         elseif($_GET['action'] == 'warningPost'){
@@ -141,16 +183,31 @@ try {
         
         
         elseif($_GET['action'] == 'approveComment'){
-            if (isset($_GET['id']) && $_GET['id'] > 0) {
-                changeStatusToOK($_GET['id']);
+            if(isset($_SESSION['id']) AND isset($_SESSION['user'])){
+                if(!empty($_SESSION['id']) AND !empty($_SESSION['user'])){
+                    if (isset($_GET['id']) && $_GET['id'] > 0) {
+                        
+                        changeStatusToOK($_GET['id']);
+                    }
+                }
             }
+            else{
+                getLogInForm();
+            } 
         }
         
         elseif($_GET['action'] == 'deleteComment'){
-            if (isset($_GET['id']) && $_GET['id'] > 0) {
-                deleteWarnedComment($_GET['id']);
+            if(isset($_SESSION['id']) AND isset($_SESSION['user'])){
+                if(!empty($_SESSION['id']) AND !empty($_SESSION['user'])){
+                    if (isset($_GET['id']) && $_GET['id'] > 0) {
+                        
+                        deleteWarnedComment($_GET['id']);
+                    }
+                }
             }
-            
+            else{
+                getLogInForm();
+            }
         }
         
         elseif($_GET['action'] == 'log_out'){
